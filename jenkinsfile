@@ -1,0 +1,14 @@
+pipline{
+    stages{
+        stage{
+            steps('compiling the code'){
+            sh "mvn clean compile"}
+
+            steps('testing the code'){
+            sh "mvn clean test"}
+
+            steps('packaging the code.'){
+            sh "mvn clean package"}
+        }
+    }
+}
