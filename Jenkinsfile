@@ -1,6 +1,6 @@
 pipline{
     stages{
-        stage (print java --version){
+        stage (version){
             steps {
                 "sh java --version"}
         }
