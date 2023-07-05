@@ -1,14 +1,23 @@
 pipline{
     stages{
-        stage{
-            steps('compiling the code'){
-            sh "mvn clean compile"}
+        stage (print java --version){
+            steps {
+                "sh java --version"}
+        }
 
-            steps('testing the code'){
-            sh "mvn clean test"}
+        stage (code compilation){
+                steps {
+                    "sh mvn clean compile"}
+        }
 
-            steps('packaging the code.'){
-            sh "mvn clean package"}
+        stage (code test){
+            steps {
+                "sh mvn clean test"}
+        }
+
+        stage (code package){
+            steps {
+                "sh mvn clean package"}
         }
     }
 }
