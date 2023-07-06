@@ -1,7 +1,7 @@
 pipeline {
     agent any
     tools {
-        Maven 'mvn'
+         toolsAutoInstall()
     }
     stages {
         stage('compiling') {
