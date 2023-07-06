@@ -1,7 +1,7 @@
 pipeline {
     agent any
-    options {
-         toolsAutoInstall()
+    tools {
+          'Custom Maven' : '/opt/apache-maven-3.8.8/bin'
     }
     stages {
         stage('compiling') {
