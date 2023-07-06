@@ -1,7 +1,7 @@
 pipeline {
     agent any
     tools {
-          maven '/opt/apache-maven-3.8.8/bin'
+          maven '/opt/apache-maven-3.8.8/bin/mvn'
     }
     stages {
         stage('compiling') {
