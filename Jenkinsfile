@@ -9,7 +9,7 @@ pipeline{
                 sh 'mvn clean compile'
             }
         }
-        
+
         stage ('Package the code'){
             steps {
                 sh 'mvn clean package'
@@ -18,7 +18,7 @@ pipeline{
 
         stage ('Building & Taging Image '){
             steps {
-                sh 'docker build -t s3clock/javaproject'
+                sh 'docker build -t s3clock/javaproject .'
             }
         }
 
