@@ -16,13 +16,16 @@ pipeline{
             }
         }
 
+        
+
+
         stage ('Login In docker'){
             steps {
                 script {
                     withCredentials([string(credentialsId:'dockerCred', variable:'dockerCred')]){
                         sh 'docker login -u s3clock -p ${dockerCred}'
-                        sh 'docker build -t s3clock/javaproject:1.1 .'
-                        sh 'docker push s3clock/javaproject'
+                        sh 'docker build -t s3clock/javaproject:2.0 .'
+                        sh 'docker push s3clock/javaproject:2.0'
                     }
                 }
             }
