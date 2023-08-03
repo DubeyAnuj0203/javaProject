@@ -15,13 +15,7 @@ pipeline{
                 sh 'mvn clean package'
             }
         }
-
-        stage ('Building & Taging Image '){
-            steps {
-                sh 'docker build -t s3clock/javaproject .'
-            }
-        }
-
+        
         stage ('Login In docker'){
             steps {
                 script {
