@@ -9,13 +9,7 @@ pipeline{
                 sh 'mvn clean compile'
             }
         }
-
-        stage ('Testing the code'){
-            steps {
-                sh 'mvn clean test.'
-            }
-        }
-
+        
         stage ('Package the code'){
             steps {
                 sh 'mvn clean package'
