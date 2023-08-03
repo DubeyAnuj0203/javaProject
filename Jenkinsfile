@@ -28,7 +28,7 @@ pipeline{
         }
 
         stage ('Pushing image to docker'){
-            stages {
+            steps {
                 sh 'docker push s3clock/javaproject:2.0'
             }
         }
