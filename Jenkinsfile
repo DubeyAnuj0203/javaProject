@@ -27,15 +27,11 @@ pipeline{
                 script {
                     withCredentials([string(credentialsId:'dockerCred', variable:'dockerCred')]){
                         sh 'docker login -u s3clock -p ${dockerCred}'
+                        sh 'docker build -t s3clock/javaproject .'
+                        sh 'docker push s3clock/javaproject'
                     }
                 }
             }
         }
-        stage ("Taging and pushing the image"){
-            steps {
-                sh 'docker push s3clock/javaproject'
-            }
-        }
-
     }
 }
